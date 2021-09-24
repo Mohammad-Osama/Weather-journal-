@@ -1,2 +1,5 @@
 commentsOnlyJS/app.js
 commentsOnlyJS/server.js
+package-lock.json
+node_modules
+key.txt
