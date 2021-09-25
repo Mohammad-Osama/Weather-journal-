@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-// projectData = {};
+ projectData = {};
 
 // Require Express to run server and routes
 const express = require('express');
@@ -12,6 +12,7 @@ app.use(express.json());
 
 // Cors for cross origin allowance
 const cors = require ('cors') ;
+const { response } = require('express');
 app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
@@ -24,8 +25,9 @@ const myPort = 7000 ;
 const myServer = app.listen (myPort , ()=>{console.log(`Server running on port ${myPort}`)}
 );
 
-
-
+/* app.get('/y' , (req,response)=>{
+    response.send(console.log("asdasdasdasd"));
+}); */
 
 
 
