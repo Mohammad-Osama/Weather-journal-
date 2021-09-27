@@ -14,8 +14,24 @@ const key = '1c82219adec930f1fbfb9a2bcc3f0ab2' ;
        // getting the data from the provided weather api 
     const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${key}` ;
     const response = await fetch(url) ;
-    const data = await response.json() ;  // converting to readable data 
+    const data = await response.json() ;  // converting from json format  
     console.log(data);
+    console.log(data.main.temp);   /////////////////////////////////////////
+           // posting data to the server 
+    await fetch('/save',{   // using the post route to post the fetched data
+      method: "POST",              
+      credentials: "same-origin",
+      headers:{
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)    // converting the data to json format         
+    });
+
+      /* console.log(newdata); 
+     const reqs = await newdata.json() ; 
+     console.log(reqs) ; 
+    const reqsJson  = await JSON.stringify(reqs) ; 
+    console.log (reqsJson) ;  */
 
 
 
@@ -41,9 +57,6 @@ const key = '1c82219adec930f1fbfb9a2bcc3f0ab2' ;
 
 
 
-
-
-    
  }
 
 
