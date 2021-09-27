@@ -31,6 +31,7 @@ const myServer = app.listen (myPort , ()=>{console.log(`Server running on port $
 app.post('/save' , (req,res)=>{
     projectData = req.body ;                    //adding the data to projectData object 
     //console.log(projectData.main) ;
+    res.send();
 
      // res.write(projectData.main) ; 
    //res.send(projectData.main)  ; 
@@ -39,12 +40,14 @@ app.post('/save' , (req,res)=>{
     //res.send(req.body.sys) ; 
     // res.end();
        
-})      
+});
 
+// the get route 
 
-/* app.get('/y' , (req,response)=>{
-    response.send(console.log("asdasdasdasd"));
-}); */
+app.get('/call' , (req,res)=>{
+    res.send(projectData.main);   //sending a response with an object that has the temprature details 
+   // console.log(projectData.main)
+});
 
 
 

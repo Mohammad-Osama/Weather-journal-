@@ -34,7 +34,9 @@ const key = '1c82219adec930f1fbfb9a2bcc3f0ab2' ;
     console.log (reqsJson) ;  */
 
 
-
+    const calledData = await fetch('/call') ; 
+    const final = await calledData.json()
+    console.log (final.temp) ; 
 
 
 
